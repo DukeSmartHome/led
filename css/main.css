@@ -1,8 +1,10 @@
 html,
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Monteserrat', sans-serif;
     color: #fff;
-    text-align:  center;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
 }
 
 html {
@@ -11,4 +13,86 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2.5em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+#wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: auto;
+    display: inline-block;
+    color: #555;
+    padding: 30px 60px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#inputs,
+#results {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+#inputs {
+    float: left;
+}
+
+#results {
+    float: right;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    width: 40%;
+    padding: 7px;
+    border: none;
+    border-bottom: 2px dotted white;
+    background: transparent;
+    font-family: 'Open Sans', sans-serif;
+    height: 25px;
+    font-size: 1em;
+    transition: border-bottom .5s;
+}
+input[type="text"]:focus {
+    border-bottom: 2px solid springgreen;
+}
+
+@media (max-width: 1100px) {
+    #wrapper {
+        border-radius: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    #wrapper {
+        padding: 20px 25px;
+    }
+    #inputs,
+    #results {
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+    #inputs {
+        float: left;
+    }
+    #results {
+        float: right;
+        padding-left: 0;
+    }
 }
