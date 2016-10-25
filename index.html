@@ -14,13 +14,31 @@
 
     <!-- CSS -->
     <link href="css/main.css" rel="stylesheet" type="text/css">
+     <link href="css/form-style-8.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Muli:300,400|Open+Sans:400,700" rel="stylesheet">
 
 </head>
 
-<body>
+<body style="font-family: Helvetica;">
+<div class="form-style-8">
+	 <form id="inputForm" action="WHAT">
+ 		LED Consumption: <input type="text" align="right" name="LCh1"><br>
+  		Fluorescent Consumption: <input type="text" name="FCh1"><br>
+  		Hours Used Per Day: <input type="text" name="hrs1"><br>
+  		Number Replaced: <input type="text" name="numRep1"><br>
+  		Days Used Per Year: <input type="text" name="DPy1"><br>
+  		Cost of Electricity: <input type="text" name="Ec1"><br>
+  		Age of Fluorescents: <input type="text" name="Af1"><br>
+  		LED Lifespan (Hours): <input type="text" name="LL1Hrs"><br>
+  		Fluorescent Lifespan (Hours): <input type="text" name="FL1Hrs"><br>
+  		Cost (per Tube) Fluorescents: <input type="text" name="C1"><br>
+  		Cost (per Tube) LEDs: <input type="text" name="CL1"><br>
+  		<input type="submit" value="Submit">
+	</form> 
+</div>
+
     <div id="results">
     </div>
     <script src="js/jquery.js"></script>
