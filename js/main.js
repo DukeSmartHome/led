@@ -152,31 +152,61 @@ $(function () {
     }
 
     // calculates all values
-    function calculateValues() {
+    function calculateValues(first_time) {
         //double LCh1, double FCh1, double hrs1, double numRep1, double DPy1, double Ec1, 
         //double Af1, double LL1, double FL1, double C1, double CL1
-        newInputs(17, 32, 12, 90, 200, 0.09, 2, 36000, 36000, 1.69, 5.92); // can take these as input using html <input> tags
-        
+        // can take these as input using html <input> tags
+        var inputNames = ['LCh1', 'FCh1', 'hrs1', 'numRep1', 'DPy1', 'Ec1', 'Af1', 'LL1Hrs', 'FL1Hrs', 'C1', 'CL1'];
+        for (var i = 0; i < inputNames.length; ++i) {
+            var name = inputNames[i];
+            eval(name + " = " + $('#' + name).val());
+        }
+        newInputs(LCh1, FCh1, hrs1, numRep1, DPy1, Ec1, Af1, LL1Hrs, FL1Hrs, C1, CL1);
+
+        if (first_time) {
+            updateValues();
+        } else {
+            shortAnim();
+            window.setTimeout(function () {
+                $('#results').empty();
+                updateValues();
+            }, 300);
+        }
+    }
+
+    function updateValues() {
         $('#results').empty();
+        output("Simple ROI:  ", calcROI().toFixed(3));
+        output("Complex ROI:  ", calcXROI().toFixed(3));
 
-        output("Simple ROI:  " + calcROI());
-        output("Complex ROI:  " + calcXROI());
-
-        output("One Year Energy Reduction for All Tubes:  " + calcESy() + " kW");
-
-
-        output("One Year Savings All Tubes (Simple Calculation):  $" + calcCSy());
-        output("All Year Savings All Tubes (Simple Calculation) (Costs Accounted For):  $" + (calcCSy() * LL - (CL * numRep)));
+        output("One Year Energy Reduction for All Tubes:  ", calcESy().toFixed(3) + " kW");
 
 
-        output("All Years Savings per tube (Complex Formula) (Costs Accounted For):  $" + calcXTotalCostSavings() + " per tube");
-        output("All Years Savings All Tubes (Complex Formula) (Costs Accounted For):  $" + calcXTotalCostSavings() * numRep);
+        output("One Year Savings All Tubes (Simple Calculation):  ", formatMoney(calcCSy()));
+        output("All Year Savings All Tubes (Simple Calculation) (Costs Accounted For):  ", formatMoney(calcCSy() * LL - (CL * numRep)));
 
+
+        output("All Years Savings per tube (Complex Formula) (Costs Accounted For):  ", formatMoney(calcXTotalCostSavings()) + " per tube");
+        output("All Years Savings All Tubes (Complex Formula) (Costs Accounted For):  ", formatMoney(calcXTotalCostSavings() * numRep));
     }
-    calculateValues();
-    
-    function output(string){
-        $('#results').append('<p>' + string + '<\p>');
+
+    $('input').keyup(function () {
+        calculateValues(false);
+    })
+
+    function startingVals(list) { // init text inputs
+        for (var i = 0; i < list.length; ++i)
+            $('#inputs label:nth-child(' + (i + 1) + ') input').val(list[i]);
     }
-        
+
+    startingVals([17, 32, 12, 90, 200, 0.09, 2, 36000, 36000, 1.69, 5.92]);
+    calculateValues(true);
+
+    function output(name, value) {
+        $('#results').append('<p class="result">' + name + '<span>' + value + '</span><\p>');
+    }
+
+    function formatMoney(value) {
+        return '$' + value.toFixed(2);
+    }
 })

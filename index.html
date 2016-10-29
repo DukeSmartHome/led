@@ -16,8 +16,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Muli:300,400|Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Oswald" rel="stylesheet">
 </head>
 
 <h1>Duke Smart Home LED-Tube Cost-Savings Calculator</h1>
@@ -25,22 +24,26 @@
 <body>
     <div id="wrapper">
         <div id="inputs">
-            <p>LED Consumption: <input type="text" align="right" name="LCh1"></p>
-            <p>Fluorescent Consumption: <input type="text" name="FCh1"></p>
-            <p>Hours Used Per Day: <input type="text" name="hrs1"></p>
-            <p>Number Replaced: <input type="text" name="numRep1"></p>
-            <p>Days Used Per Year: <input type="text" name="DPy1"></p>
-            <p>Cost of Electricity: <input type="text" name="Ec1"></p>
-            <p>Age of Fluorescents: <input type="text" name="Af1"></p>
-            <p>LED Lifespan (Hours): <input type="text" name="LL1Hrs"></p>
-            <p>Fluorescent Lifespan (Hours): <input type="text" name="FL1Hrs"></p>
-            <p>Cost (per Tube) Fluorescents: <input type="text" name="C1"></p>
-            <p>Cost (per Tube) LEDs: <input type="text" name="CL1"></p>
+            <label for="LCh1">LED Consumption: 					<input type="text" id="LCh1"></label>
+            <label for="FCh1">Fluorescent Consumption: 			<input type="text" id="FCh1"></label>
+            <label for="hrs1">Hours Used Per Day: 				<input type="text" id="hrs1"></label>
+            <label for="numRep1">Number Replaced: 				<input type="text" id="numRep1"></label>
+            <label for="DPy1">Days Used Per Year: 				<input type="text" id="DPy1"></label>
+            <label for="Ec1">Cost of Electricity: 				<input type="text" id="Ec1"></label>
+            <label for="Af1">Age of Fluorescents: 				<input type="text" id="Af1"></label>
+            <label for="LL1Hrs">LED Lifespan (Hours): 			<input type="text" id="LL1Hrs"></label>
+            <label for="FL1Hrs">Fluorescent Lifespan (Hours): 	<input type="text" id="FL1Hrs"></label>
+            <label for="C1">Cost (per Tube) Fluorescents: 		<input type="text" id="C1"></label>
+            <label for="CL1">Cost (per Tube) LEDs: 				<input type="text" id="CL1"></label>
         </div>
         <div id="results">
         </div>
+
+    </div>
+    <div id="led-display">
     </div>
     <script src="js/jquery.js"></script>
+    <script src="js/led.js"></script>
     <script src="js/main.js"></script>
 
 </body>
