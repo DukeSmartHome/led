@@ -197,7 +197,7 @@ $(function () {
             $('#inputs label:nth-child(' + (i + 1) + ') input').val(list[i]);
     }
 
-    startingVals([17, 32, 12, 100, 200, 0.10, 2, 36000, 36000, 1.69, 5.92]);
+    startingVals([15, 32, 12, 1100, 200, 0.10, 2, 50000, 36000, 1.69, 8.64]);
     calculateValues(true);
 
     function output(name, value) {
