@@ -179,7 +179,7 @@ $(function () {
         output("Current Lifespan of Fluorescents:  ", Math.round(FL.toFixed(2) * 100) / 100 + " years"); 
         $('#results').append('<hr>');
 
-        output("One Year Energy Reduction for All Tubes:  ", calcESy().toFixed(3) + " kWh");
+        output("Annual Energy Reduction for All Tubes:  ", calcESy().toFixed(3) + " kWh");
         
 
 
