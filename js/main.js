@@ -62,7 +62,7 @@ $(function () {
     var Wm; //Total Wasted Money of a Fluorescent Tube
 
     //FINAL OUTPUTS
-    var ESy; //Yearly Energy Savings for all tubes
+    var ESy; //Yearly Power Savings for all tubes
     var CSy; //Yearly Cost Savings for all tubes
     var XTCSt; //Total Savings per Tube using Complex Formula
     var XROI; //Complex ROI
@@ -167,13 +167,20 @@ $(function () {
 
     function updateValues() {
         $('#results').empty();
-        output("Simple ROI:  ", calcROI().toFixed(3));
-        output("Complex ROI:  ", calcXROI().toFixed(3));
+       /* output("Simple ROI:  ", calcROI().toFixed(3));
+        output("Complex ROI:  ", calcXROI().toFixed(3)); */
 
-        output("One Year Energy Reduction for All Tubes:  ", calcESy().toFixed(3) + " kW");
+         $('#results').append('<p class="result">' + "Simple ROI:  " + '<span>'  + calcROI().toFixed(3) + '</span>'
+          + "  ||| Complex ROI:  " + '<span>'  + calcXROI().toFixed(3) + '</span>' + 
+          '<\p>');
+        $('#results').append('<hr>');
         output("Up-Front Cost:  ", formatMoney(CL * numRep));
         output("Projected Lifespan of LEDs:  ", Math.round(LL.toFixed(2) * 100) / 100 + " years");
         output("Current Lifespan of Fluorescents:  ", Math.round(FL.toFixed(2) * 100) / 100 + " years"); 
+        $('#results').append('<hr>');
+
+        output("One Year Energy Reduction for All Tubes:  ", calcESy().toFixed(3) + " kWh");
+        
 
 
         output("Annual Total Cost Savings (Simple):  ", formatMoney( calcCSy()   ));
