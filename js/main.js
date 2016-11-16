@@ -68,15 +68,6 @@ $(function () {
     var XROI; //Complex ROI
     var ROI; // Simple ROI
 
-    function calcFL() {
-        FL = (FLHrs / hrs) * (DPy / 365);
-        return FL;
-    }
-
-    function calcLL() {
-        LL = (LLHrs / hrs) * (DPy / 365);
-        return LL;
-    }
 
 
     function calcCSy() {
@@ -180,14 +171,21 @@ $(function () {
         output("Complex ROI:  ", calcXROI().toFixed(3));
 
         output("One Year Energy Reduction for All Tubes:  ", calcESy().toFixed(3) + " kW");
+        output("Up-Front Cost:  ", formatMoney(CL * numRep));
+        output("Projected Lifespan of LEDs:  ", Math.round(LL.toFixed(2) * 100) / 100 + " years");
+        output("Current Lifespan of Fluorescents:  ", Math.round(FL.toFixed(2) * 100) / 100 + " years"); 
 
 
-        output("One Year Savings All Tubes (Simple Calculation):  ", formatMoney(calcCSy()));
-        output("All Year Savings All Tubes (Simple Calculation) (Costs Accounted For):  ", formatMoney(calcCSy() * LL - (CL * numRep)));
+        output("Annual Total Cost Savings (Simple):  ", formatMoney( calcCSy()   ));
+        output("Annual Cost Savings per Tube (Simple):  ", formatMoney(calcCSy() / numRep ));
+        output("Lifespan Total Net Present Value (NPV) (Simple):  ", formatMoney(calcCSy() * LL - (CL * numRep)));
 
 
-        output("All Years Savings per tube (Complex Formula) (Costs Accounted For):  ", formatMoney(calcXTotalCostSavings()) + " per tube");
-        output("All Years Savings All Tubes (Complex Formula) (Costs Accounted For):  ", formatMoney(calcXTotalCostSavings() * numRep));
+        /*output("Lifespan (perTube) Net Present Value (Complex Formula):  ", formatMoney(calcXTotalCostSavings()) + " per tube"); 
+        */
+
+
+        output("Lifespan NPV (Complex):  ", formatMoney(calcXTotalCostSavings() * numRep));
     }
 
     $('input').keyup(function () {
@@ -199,7 +197,7 @@ $(function () {
             $('#inputs label:nth-child(' + (i + 1) + ') input').val(list[i]);
     }
 
-    startingVals([17, 32, 12, 90, 200, 0.09, 2, 36000, 36000, 1.69, 5.92]);
+    startingVals([17, 32, 12, 100, 200, 0.10, 2, 36000, 36000, 1.69, 5.92]);
     calculateValues(true);
 
     function output(name, value) {
@@ -207,6 +205,6 @@ $(function () {
     }
 
     function formatMoney(value) {
-        return '$' + value.toFixed(2);
+        return '$' + value.toFixed(6);
     }
 })
