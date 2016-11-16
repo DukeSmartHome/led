@@ -185,14 +185,14 @@ $(function () {
 
         output("Annual Total Cost Savings (Simple):  ", formatMoney( calcCSy()   ));
         output("Annual Cost Savings per Tube (Simple):  ", formatMoney(calcCSy() / numRep ));
-        output("Lifespan Total Net Present Value (NPV) (Simple):  ", formatMoney(calcCSy() * LL - (CL * numRep)));
+        output("Total Net Present Value (NPV) Lifespan (Simple):  ", formatMoney(calcCSy() * LL - (CL * numRep)));
 
 
         /*output("Lifespan (perTube) Net Present Value (Complex Formula):  ", formatMoney(calcXTotalCostSavings()) + " per tube"); 
         */
 
 
-        output("Lifespan NPV (Complex):  ", formatMoney(calcXTotalCostSavings() * numRep));
+        output("Total NPV Lifespan (Complex):  ", formatMoney(calcXTotalCostSavings() * numRep));
     }
 
     $('input').keyup(function () {
