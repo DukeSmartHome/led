@@ -2,13 +2,13 @@ var numlights = 0; // keeps track of number of lights
 var phaseShift = 0; // phase shift
 var requestID; // ID of request animation frame
 
-addLEDs();
+updateLEDs();
 
 $(window).resize(function () {
-    addLEDs();
+    updateLEDs();
 });
 
-function addLEDs() {
+function updateLEDs() {
     var size = {
         width: window.innerWidth || document.body.clientWidth,
         height: window.innerHeight || document.body.clientHeight
@@ -40,9 +40,10 @@ function animateLights() {
     phaseShift += 0.060;
     for (var i = 0; i < numlights; ++i) {
         var bottomShift = getSinePos(i, 0),
-            colorShift = (bottomShift / 3) + 0.5;
+            colorShift = (bottomShift / 3) + 0.7;
         $('#led-' + i).css('bottom', ((100 * bottomShift) - 300) + 'px');
         $('#led-' + i).css('background-color', 'rgba(255, 255, 255, ' + colorShift + ')');
+        $('#led-' + i).css('box-shadow', '2px 3px 7px rgba(0, 0, 0, 0.3), 0 25px 70px rgba(255, 255, 255, ' + colorShift + ')');
     }
     requestID = requestAnimationFrame(animateLights);
 }

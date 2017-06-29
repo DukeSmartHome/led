@@ -1,164 +1,220 @@
-html,
-body {
-    font-family: 'Monteserrat', sans-serif;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    font-weight: bold;
+html, body {
+  font-family: 'Monteserrat', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
 }
 
 html {
-    background: url(../bg.svg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url(../bg.svg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h1 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: normal;
-    font-size: 2.5em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 #wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    display: inline-block;
-    color: white;
-    padding: 30px 60px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 3px;
-    box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  display: inline-block;
+  color: white;
+  padding: 30px 60px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  box-sizing: border-box;
 }
 
-#inputs,
-#results {
-    width: 50%;
-    display: inline-block;
-    text-align: left;
-    box-sizing: border-box;
+#inputs, #results {
+  width: 50%;
+  display: inline-block;
+  text-align: left;
+  box-sizing: border-box;
 }
 
 #inputs {
-    float: left;
+  float: left;
 }
 
 #results {
-    float: right;
-    padding-left: 20px;
-    box-sizing: border-box;
+  float: right;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
 
 .result {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .result span {
-    font-size: 14px;
-    font-weight: lighter;
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 input[type="text"] {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    width: 40%;
-    padding: 7px;
-    border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    background: transparent;
-    font-family: 'Open Sans', sans-serif;
-    height: 25px;
-    font-size: 1em;
-    transition: border-bottom .5s;
-    color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  width: 40%;
+  padding: 7px;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  height: 25px;
+  font-size: 1em;
+  transition: border-bottom .5s;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 input[type="text"]:focus {
-    border-bottom: 2px solid white;
-    color: white;
+  border-bottom: 2px solid white;
+  color: white;
 }
 
 #led-display {
-    position: fixed;
-    z-index: -999;
-    bottom: 0;
-    width: 100%;
-    height: 500px;
+  position: fixed;
+  z-index: -999;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
 }
 
 .led-body {
-    position: absolute;
-    bottom: -300px;
-    width: 100px;
-    height: 500px;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: -300px;
+  width: 100px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.3), 0 25px 70px rgba(255,255,255,0.2);
+}
+
+.led-body::after {
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  opacity: 0.5;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#515151+0,515151+99&0.65+0,0.31+20,0+61,0.31+91,0.65+100 */
+  background: -moz-linear-gradient(left, rgba(81, 81, 81, 0.65) 0%, rgba(81, 81, 81, 0.31) 20%, rgba(81, 81, 81, 0) 61%, rgba(81, 81, 81, 0.31) 91%, rgba(81, 81, 81, 0.61) 99%, rgba(81, 81, 81, 0.65) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(81, 81, 81, 0.65) 0%, rgba(81, 81, 81, 0.31) 20%, rgba(81, 81, 81, 0) 61%, rgba(81, 81, 81, 0.31) 91%, rgba(81, 81, 81, 0.61) 99%, rgba(81, 81, 81, 0.65) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(81, 81, 81, 0.65) 0%, rgba(81, 81, 81, 0.31) 20%, rgba(81, 81, 81, 0) 61%, rgba(81, 81, 81, 0.31) 91%, rgba(81, 81, 81, 0.61) 99%, rgba(81, 81, 81, 0.65) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6515151', endColorstr='#a6515151', GradientType=1);
+  /* IE6-9 */
 }
 
 .led-cap {
-    width: 120px;
-    height: 50px;
-    margin-top: -5px;
-    margin-left: -10px;
-    background-color: #aaa;
-    border-radius: 5px;
-    float: left;
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  width: 120px;
+  height: 50px;
+  margin-top: -5px;
+  margin-left: -10px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,dbdbdb+18,c9c9c9+77,adadad+100 */
+  background: #fefefe;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #fefefe 0%, #dbdbdb 18%, #c9c9c9 77%, #adadad 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fefefe 0%, #dbdbdb 18%, #c9c9c9 77%, #adadad 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fefefe 0%, #dbdbdb 18%, #c9c9c9 77%, #adadad 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#adadad', GradientType=0);
+  /* IE6-9 */
+  border-radius: 5px;
+  float: left;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.left-pin,
-.right-pin {
-    width: 8px;
-    height: 35px;
-    margin-top: -30px;
-    background-color: goldenrod;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+.led-cap::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  opacity: 0.7;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#515151+0,515151+99&0.65+0,0.31+20,0+61,0.31+91,0.65+100 */
+  background: -moz-linear-gradient(left, rgba(81, 81, 81, 0.65) 0%, rgba(81, 81, 81, 0.31) 20%, rgba(81, 81, 81, 0) 61%, rgba(81, 81, 81, 0.31) 91%, rgba(81, 81, 81, 0.61) 99%, rgba(81, 81, 81, 0.65) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(81, 81, 81, 0.65) 0%, rgba(81, 81, 81, 0.31) 20%, rgba(81, 81, 81, 0) 61%, rgba(81, 81, 81, 0.31) 91%, rgba(81, 81, 81, 0.61) 99%, rgba(81, 81, 81, 0.65) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(81, 81, 81, 0.65) 0%, rgba(81, 81, 81, 0.31) 20%, rgba(81, 81, 81, 0) 61%, rgba(81, 81, 81, 0.31) 91%, rgba(81, 81, 81, 0.61) 99%, rgba(81, 81, 81, 0.65) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6515151', endColorstr='#a6515151', GradientType=1);
+  /* IE6-9 */
+}
+
+.left-pin, .right-pin {
+  width: 8px;
+  height: 35px;
+  margin-top: -30px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f8b500+23,fffef9+64,fffef9+64,fffef9+69,f8b500+100 */
+  background: #f8b500;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #f8b500 23%, #fffef9 64%, #fffef9 64%, #fffef9 69%, #f8b500 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #f8b500 23%, #fffef9 64%, #fffef9 64%, #fffef9 69%, #f8b500 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #f8b500 23%, #fffef9 64%, #fffef9 64%, #fffef9 69%, #f8b500 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8b500', endColorstr='#f8b500', GradientType=1);
+  /* IE6-9 */
+  border-radius: 3px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .left-pin {
-    margin-left: 20px;
-    float: left;
+  margin-left: 20px;
+  float: left;
 }
 
 .right-pin {
-    margin-right: 20px;
-    float: right;
+  margin-right: 20px;
+  float: right;
 }
 
 @media (max-width: 1100px) {
-    #wrapper {
-        border-radius: 0;
-        width: 100%;
-    }
+  #wrapper {
+    border-radius: 0;
+    width: 100%;
+  }
 }
 
 @media (max-width: 850px) {
-    #wrapper {
-        padding: 20px 25px;
-    }
-    #inputs,
-    #results {
-        width: 100%;
-        display: block;
-        text-align: left;
-    }
-    #inputs {
-        float: left;
-    }
-    #results {
-        float: right;
-        padding-left: 0;
-    }
+  #wrapper {
+    padding: 20px 25px;
+  }
+  #inputs, #results {
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+  #inputs {
+    float: left;
+  }
+  #results {
+    float: right;
+    padding-left: 0;
+  }
 }
